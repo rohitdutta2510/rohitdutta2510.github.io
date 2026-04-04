@@ -13,11 +13,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Rohit Dutta</a>
-            <ul class="nav-menu">
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="site-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="publications.html" class="nav-link">Publications</a></li>
             </ul>
+            <button class="nav-overlay" type="button" aria-label="Close navigation menu"></button>
         </div>
     </nav>
 
@@ -80,40 +86,6 @@
         <p>&copy; 2026 Rohit Dutta. All rights reserved.</p>
     </footer>
 
-    <script>
-        (function () {
-            const heading = document.getElementById('typewriter-heading');
-            if (!heading) {
-                return;
-            }
-
-            const prefix = "Hi, I'm ";
-            const name = 'Rohit Dutta';
-            const cursor = '<span class="type-cursor" aria-hidden="true">|</span>';
-
-            let i = 0;
-            let j = 0;
-
-            const type = function () {
-                if (i < prefix.length) {
-                    heading.innerHTML = prefix.slice(0, i + 1) + cursor;
-                    i += 1;
-                    setTimeout(type, 70);
-                    return;
-                }
-
-                if (j < name.length) {
-                    heading.innerHTML = prefix + '<span class="highlight">' + name.slice(0, j + 1) + '</span>' + cursor;
-                    j += 1;
-                    setTimeout(type, 90);
-                    return;
-                }
-
-                heading.innerHTML = prefix + '<span class="highlight">' + name + '</span>';
-            };
-
-            type();
-        })();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
